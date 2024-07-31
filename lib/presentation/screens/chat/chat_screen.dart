@@ -17,7 +17,8 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                'https://c.ndtvimg.com/cristiano-ronaldo-reuters_625x300_1530764546324.jpg?output-quality=80&downsize=330:*'),
+              'https://c.ndtvimg.com/cristiano-ronaldo-reuters_625x300_1530764546324.jpg?output-quality=80&downsize=330:*',
+            ),
           ),
         ),
         title: const Text('Cris ⚽️🐐'),
@@ -40,11 +41,12 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
+                controller: chatProvider.chatScrollController,
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
                   final message = chatProvider.messageList[index];
                   return (message.fromWho == FromWho.his)
-                      ? const HisMessageBubble()
+                      ? HisMessageBubble(message: message)
                       : MyMessageBubble(message: message);
                 },
               ),
