@@ -1,6 +1,6 @@
-# yes_no_app
+## Yes-No App - Chat with CR7
 
-A new Flutter project.
+A new Flutter project. Currently learning. This app simulates a chat with Cristiano Ronaldo, his messages can only be yes or no, this because is used an api called "yesno.wtf" that send randomly answers with images.
 
 ## Getting Started
 
